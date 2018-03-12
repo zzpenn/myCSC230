@@ -1,8 +1,9 @@
-<html><head>
+<html>
+    <head>
 
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-			<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	    	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+            <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 				
 					<!-- Latest compiled and minified CSS -->
 
@@ -10,39 +11,63 @@
 
 					
 					<!--<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">-->
-					<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
-						<!--<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">-->
-						<link rel="stylesheet" type="text/css" href="css/style.css">
-							<link rel="stylesheet" type="text/css" media="print" href="css/print.css">
-								<!--<link rel="stylesheet" type="text/css" media="print" href="css/bootstrap-datetimepicker.css">-->
-								<link href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-									<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+	    <link rel="stylesheet" type="text/css" href="css/style.css">
+	    <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+	<!--<link rel="stylesheet" type="text/css" media="print" href="css/bootstrap-datetimepicker.css">-->
+	    <link href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <!-- Latest compiled and minified JavaScript -->
-										<!--<script src="js/jquery.min.js"></script>-->
-										<script src="https://code.jquery.com/jquery-1.11.2.min.js"
-												integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA="
-												crossorigin="anonymous"></script>
-										<script src="js/bootstrap.min.js"></script>
-										<script src="js/moment.js"></script>
-										<!--<script src="js/jquery.bxslider.min.js"></script>-->
-										<script src="js/bxslider.js"></script>
-										<script src="js/accordion-glyphicon.js"></script>
-										<script src="js/external-target-blank.js"></script>
-										<script src="js/iframe-height.js"></script>
-										<script src="js/iframe-custom.js"></script>
-										<script src="js/back-to-top.js"></script>
-										<script src="js/widgets.js"></script>
-										<script src="js/jquery.validate.js"></script>
-										<script src="js/youtube.js"></script>
-										<!--<script src="js/bootstrap-datetimepicker.js"></script>-->
-										<script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
-										<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	    <script src="https://code.jquery.com/jquery-1.11.2.min.js"
+	        integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA="
+        	crossorigin="anonymous">
+        </script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<script src="js/moment.js"></script>
+    	<script src="js/bxslider.js"></script>
+    	<script src="js/accordion-glyphicon.js"></script>
+    	<script src="js/external-target-blank.js"></script>
+    	<script src="js/iframe-height.js"></script>
+    	<script src="js/iframe-custom.js"></script>
+    	<script src="js/back-to-top.js"></script>
+    	<script src="js/widgets.js"></script>
+        <!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        -->
+    	<script src="js/youtube.js"></script>
+    	<script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+    	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <script src="js/opportunity.js"></script>
+    <script type="text/javascript">
+            $(document).ready(
+             function () {
+                 initNewOppForm();
+                 $('#formdatetimepicker2').datetimepicker();
+                 $('#editOpp').show();
+                 $('#newOpp').hide();
+                 $('#showNewOpp').click(function (){
+                     $('#newOpp').show();
+                 });
 
-									</head>
-									<body>
+                 $('#saveNewOpp').click(function() {
+                     saveOpportunity();
+                 });
 
+                 $('#exitNewOpp').click(function() {
+                     $('#newOpp').hide();
+                 });
 
-										<div class="navbar navbar-default navbar-static-top navbar-global">
+                 $('#showEditOpp').hide();  //hiding for 1st pass through
+                 $('#showEditOpp').click(function() {
+                 });
+             });
+
+        </script>
+    </head>
+
+	<body>
+
+    	<div class="navbar navbar-default navbar-static-top navbar-global">
 											<div class="container relative">
 
 												<!-- Skip to content link for Screen readers and keyboard users only -->
@@ -50,6 +75,7 @@
 
 
 												<div class="row">
+												
 													<div class="col-lg-3 col-md-3 col-sm-12 logoContainer">
 														<div class="navbar-header display-flex"><a class="navbar-brand" href="/page/home">
 																<div class="logoMain logo">
@@ -107,11 +133,11 @@
 												</div>
 
 											</div>
+												
 										</div>
-
 										<!-- Main Tabs Navigation -->
 										<!-- Mobile version -->
-										<div class="navbar navbar-inverse navbar-static-top navbar-tab">
+		<div class="navbar navbar-inverse navbar-static-top navbar-tab">
 											<div class="container">
 												<div class="navbar-header">
 													<button class="navbar-toggle pull-left" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Menu"><i class="fa fa-reorder"></i></button>
@@ -145,128 +171,163 @@
 													</div>
 												</div>
 											</div>
-
-											<!-- END HEADER --> 
-
-
+											<!-- END HEADER -->
 
 											<!-- ==========================CONTENT STARTS HERE ========================== -->
-											<div id="main" role="main">
+		<div id="main" role="main">
+			<div class="custom-app">
+				<div class="container content">
+                    <div class="row" id="chooseAction">
+                        <h1>Opportunities</h1>
+                        <span><button id="showEditOpp" type="button" class="btn btn-primary">Edit Opportunity</button></span>
+                        <span><button id="showNewOpp" type="button" class="btn btn-primary">Create New Opportunity</button></span>
+                    </div>
+
+                    <div class="row" id="newOpp">
+                        <div class="col-md-8 clearfix bid-opportunities">
+                            <div class="page-header">
+                                <h1>Create New Opportunity</h1>
+                            </div>
+
+                            <h3>Define</h3>
+
+                            <form id="newOppForm">
+
+								<div class="form-group">
+									<label for="formId">Name</label>
+									<input type="text" class="form-control" id="formIdInput" placeholder="Opportunity Id" required>
+								</div>
+
+                                <div class="form-group">
+                                    <label for="formName">Name</label>
+                                    <input type="text" class="form-control" id="formNameInput" placeholder="Opportunity Name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="formDescription">Description</label>
+                                    <textarea class="form-control" id="formDescriptionInput" rows="4" placeholder="Describe the opportunity." required></textarea>
+                                </div>
+
+                                <div class="row">
+                                    <div class='col-sm-6'>
+                                        <div class="form-group"><label for="closing_time">Closing Time</label>
+                                            <div class='input-group date' id='formdatetimepicker2'>
+                                                <input type='text' class="form-control" name="closing_time" required/>
+                                                <span class="input-group-addon">
+												    <span class="glyphicon glyphicon-calendar"></span>
+												</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="selectLead">Lead Evaluator</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="selectLead" name="lead" required>
+                                                <option>Choose...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <div class="custom-file">
+                                                <label class="custom-file-label" for="criteriaFile">Scoring Criteria</label>
+                                                <input id="criteriaFile" type="file" name="criteriaFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               <div class="form-group">
+                                   <button id="saveNewOpp" type="button" class="btn btn-primary">Create</button>
+                                   <button id="clearNewOpp" type="button" class="btn btn-primary">Clear Form</button>
+                                   <button id="exitNewOpp"type="button" class="btn btn-primary">Exit Create</button>
+                               </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="row" id="editOpp">
+
+						<table id="opDescTable" class="table table-responsive">
+							<tbody>
+							<tr>
+								<th scope="row">Number</th>
+								<td>2016-8258</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Final Filing Date</th>
+								<td>01/26/2017 at 3:00 p.m. (Pacific Time)</td>
+							</tr>
+							<tr>
+								<th scope="row">Name</th>
+								<td>Health Open Enrollment Communication Dissemination</td>
+							</tr>
+							<tr>
+								<th scope="row">Type</th>
+								<td>Request for Proposal</td>
+							</tr>
+							<tr>
+								<th scope="row">Description</th>
+								<td>The California Public Employees Retirement System (CalPERS) is soliciting qualified firms for up to a five (5) years service agreement providing production and fulfillment of the Open Enrollment (OE) Communication Dissemination materials.  CalPERS is required to provide members an Open Enrollment period to exercise an informed choice for their health benefit plan.  </td>
+							</tr>
+							</tbody>
+						</table>
+
+
+                        <div>
+							<h4>Upload a new document to attach to this opportunity.</h4>
+						</div>
+						<div>
+							<h4>Choose existing documents to attach to this opportunity.</h4>
+							<form>
+						        <table id="docListTable" class="table table-responsive">
+							        <thead>
+									    <th scope="col">Include</th>
+								    	<th scope="col">Name</th>
+								    	<th scope="col">ID</th>
+								    	<th scope="col">Description</th>
+					    		    </thead>
+					    		    <tbody>
+					    				<tr>
+                                            <td><input name="oppDoc" type="checkbox" value="1"> </td>
+					    					<td>Proposal Cover Letter</td>
+					    					<td>Doc-8258</td>
+					    					<td>Letter Vendor to include</td>
+										</tr>
+										<tr>
+											<td><input name="oppDoc" type="checkbox" value="2"> </td>
+											<td>W-9</td>
+											<td>Doc-8894</td>
+											<td>W-9 Form</td>
+					    				</tr>
+					    		    </tbody>
+								</table>
+							</form>
+						</div>
+					</div>
 
 
 
-												<div class="custom-app">
-													<div class="container content">
-
-														<div class="row">
-															<div class="col-md-8 clearfix bid-opportunities">
-																<div class="page-header">
-																	<h1>Create New Opportunity</h1>
-																</div>
-
-																<h3>Define<h3>
-
-																		<form>
-																			<div class="form-group">
-																				<label for="formName">Name</label>
-																				<input type="text" class="form-control" id="formNameInput" placeholder="Opportunity Name">
-																				</div>
-																				<div class="form-group">
-																					<label for="formDescription">Description</label>
-																					<textarea class="form-control" id="formDescriptionInput" rows="4" placeholder="Describe the opportunity."></textarea>
-																				</div>
-
-																				<label class="my-1 mr-2" for="selectLead">Lead Evaluator</label>
-																				<select class="custom-select my-1 mr-sm-2" id="selectLead" name="lead">
-																					<option selected>Choose...</option>
-																					<option value="1">Lena Horne</option>
-																					<option value="2">Ava Duvernay</option>
-																					<option value="3">Greta Gerwig</option>
-																				</select>
-
-
-																				<div class="row">
-																					<div class='col-sm-6'>
-																						<div class="form-group"><label for="closing_time">Closing Time</label>
-																							<div class='input-group date' id='datetimepicker1'>
-
-																								<input type='text' class="form-control" name="closing_time"/>
-																								<span class="input-group-addon">
-																									<span class="glyphicon glyphicon-calendar"></span>
-																								</span>
-																							</div>
-																						</div>
-																					</div>
-																					<script type="text/javascript">
-																						$(function () {
-																						$('#datetimepicker1').datetimepicker();
-																						});
-																					</script>
-																				</div>
-																				<div class="custom-file">
-																					<label class="custom-file-label" for="criteriaFile">Scoring Criteria</label>
-																					<input type="file" class="custom-file-input" id="criteriaFile">
-
-																					</div>
-
-
-
-
-
-																				</div>
-
-																			</form>
-
-
-
-
-
-
-
-
-
-
-
-
-																		</div>
-
-
-
-																		<div class="col-md-4 rsn">
-
-
-
-
-
-
-
-																		</div>
-																	</div>
-																</div>
-															</div>
-
-
-														</div>
+				</div>
+            </div>
+        </div>
 														<!-- ==========================CONTENT ENDS HERE ========================== -->
-
-
 
 
 														<!-- FOOTER -->
 
-														<div class="footer text-center">
-															<div class="container"> 
-																<!-- Social Media Links -->
-
-																<p><span class="tagline">We serve those who serve California.</span><br>
-																		© Copyright 2018 California Public Employees' Retirement System (CalPERS) | <span class="state-ca"><a href="http://www.ca.gov" target="_blank" title="Opens in a new window">State of California</a></span></p>
-																	<!-- Global Footer Links -->
-
-																</div>
-															</div>
-
-
-															<!-- END FOOTER --> 
-
-
-														</body></html>
+		<div class="footer text-center">
+		    <div class="container">
+		        <p><span class="tagline">We serve those who serve California.</span><br>
+		        ï¿½ Copyright 2018 California Public Employees' Retirement System (CalPERS) | <span class="state-ca"><a href="http://www.ca.gov" target="_blank" title="Opens in a new window">State of California</a></span></p>
+		<!-- Global Footer Links -->
+		    </div>
+		</div>
+															<!-- END FOOTER -->
+    </body>
+</html>
