@@ -2,10 +2,12 @@ $(document).ready(
     function () {
         initNewOppForm();
         $('#formdatetimepicker2').datetimepicker();
-        $('#editOpp').show();
+        $('#editOpp').hide();
         $('#newOpp').hide();
         $('#showNewOpp').click(function (){
             $('#newOpp').show();
+            $('#oppButtons').hide();
+            $('#docListTable').tablesorter();
         });
 
 
@@ -18,10 +20,13 @@ $(document).ready(
 
         $('#exitNewOpp').click(function() {
             $('#newOpp').hide();
+            $('#oppButtons').show();
         });
 
-        $('#showEditOpp').hide();  //hiding for 1st pass through
+      //  $('#showEditOpp').hide();  //hiding for 1st pass through
         $('#showEditOpp').click(function() {
+            $('#editOpp').show();
+            $('#oppButtons').hide();
         });
     });
 
