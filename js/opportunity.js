@@ -96,22 +96,21 @@ function getLeadEvals() {
 
 function saveOpportunity() {
     var scoreFile = $('#criteriaFile')[0].files[0];
-    var opId = parseInt($('#formIdInput').val());
+    var opId = $('#formIdInput').val();
     var name = $('#formNameInput').val();
     var desc = $('#formDescriptionInput').val();
     var close = $('#formdatetimepicker2').data("DateTimePicker").viewDate().toString();
     var jsonRecord =
-    {"opportunity":
 			{"OpportunityID":opId,
                 "Name":name,
 				"ClosingDate":close,
 				"ScoringCategoryBlob":scoreFile,
 				"LeadEvaluatorID":3,
 				"LowestBid":10000,
-				"Description":desc}};
+				"Description":desc};
     var xhr = new XMLHttpRequest();
     xhr.open('POST','http://athena.ecs.csus.edu/~wildcard/php/api/opportunity/create.php',true);
-//    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');  //Creates an  error
+    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded; charset=utf-8');  //Creates an  error
     xhr.onload = function() {
         if (xhr.status == 200) {
             alert(xhr.responseText);
@@ -120,7 +119,8 @@ function saveOpportunity() {
         	alert("Error saving opportunity");
         }
     };
-    xhr.send(jsonRecord);
+    var jsonString = JSON.stringify(jsonRecord);
+    xhr.send(jsonString);
     console.log("Wrote Json: " + jsonRecord);
 }
 
