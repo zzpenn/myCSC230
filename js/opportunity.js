@@ -125,7 +125,7 @@ function saveOpportunity() {
 }
 
 function submitDocList() {
-
+alert("Clicked");
 }
 
 function getDocList() {
